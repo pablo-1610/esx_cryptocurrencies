@@ -1,10 +1,10 @@
 Config = {
     esxGetter = "esx:getSharedObject",
-    webhook = "here",
+    webhook = "put your webhook here",
     webhook_mess_color = 8421504,
     blip = false,
     position = vector3(-64.09, -797.39, 44.23),
-    debug = true, -- Console printing
+    debug = false, -- Console printing
 
     crypto = {
         maxValue = 1000000,
