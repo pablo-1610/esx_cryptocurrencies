@@ -86,6 +86,17 @@ Citizen.CreateThread(function()
     createMenuPanes()
 
     local interactZone = Config.position
+    if Config.blip then 
+        local blip = AddBlipForCoord(interactZone)
+        SetBlipAsShortRange(blip, true)
+        SetBlipScale(blip, 0.9)
+        SetBlipSprite(blip, 58)
+        SetBlipColour(blip, 28)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentString("Cryptomonnaies")
+        EndTextCommandSetBlipName(blip)
+    end
+
     while true do
         local interval = 250
         local playerPos = GetEntityCoords(PlayerPedId())

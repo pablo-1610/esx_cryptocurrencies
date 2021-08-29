@@ -121,13 +121,17 @@ AddEventHandler("crypto:buyCryptos", function(type, qty)
         TriggerClientEvent("crypto:cbServer", _src, "~r~Vous n'avez pas assez d'argent pour acheter ~b~"..qty.." "..cryptos[type].label)
         return
     end
+    local sync = true
     if not wallet[identifier] then
         wallet[identifier] = {}
         MySQL.Async.insert("INSERT INTO cryptos_wallet (identifier, wallet) VALUES(@a,@b)", {
             ["a"] = identifier,
             ["b"] = json.encode({})
-        })
+        }, function(insertId)
+            sync = false
+        end)
     end
+    while sync do Wait(1) end
     if not wallet[identifier][type] then
         wallet[identifier][type] = 0
     end
