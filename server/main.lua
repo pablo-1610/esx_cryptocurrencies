@@ -2,7 +2,7 @@ ESX, cryptos, watchers = nil, {}, {}
 
 wallet = {}
 
--- DO NOT DESACTIVATE
+-- DO NOT ACTIVATE (Debug command only)
 --[[
 RegisterCommand("debugCmd", function(source)
     local _src = source
