@@ -123,6 +123,10 @@ AddEventHandler("crypto:buyCryptos", function(type, qty)
     end
     if not wallet[identifier] then
         wallet[identifier] = {}
+        MySQL.Async.insert("INSERT INTO cryptos_wallet (identifier, wallet) VALUES(@a,@b)", {
+            ["a"] = identifier,
+            ["b"] = json.encode({})
+        })
     end
     if not wallet[identifier][type] then
         wallet[identifier][type] = 0
