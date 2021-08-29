@@ -36,7 +36,7 @@ local function initCryptoVariator()
             for crypto, cryptoData in pairs(cryptos) do
                 if Config.crypto.noChangeChance() then
                     cryptos[crypto].positive = nil
-                    print("La valeur de "..crypto.." ne change pas !")
+                    debug("La valeur de "..crypto.." ne change pas !")
                 else
                     local newCryptoValue, isPositive = alterCryptoValue(cryptoData.value)
                     cryptos[crypto].positive = isPositive
