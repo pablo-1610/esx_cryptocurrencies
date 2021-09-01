@@ -2,7 +2,7 @@ Config = {
     esxGetter = "esx:getSharedObject",
     webhook = "put your webhook here",
     webhook_mess_color = 8421504,
-    blip = false,
+    blip = true,
     position = vector3(-64.09, -797.39, 44.23),
     debug = false, -- Console printing
 
@@ -11,10 +11,10 @@ Config = {
         minValue = 0,
 
         noChangeChance = function()
-            return (math.random(1,3) == 1)
+            return (math.random(1, 3) == 1)
         end,
 
-        cryptoVariationCycle = 60, -- In seconds
+        cryptoVariationCycle = 2, -- In seconds
 
         positiveMaxVariationValue = 100,
         negativeMaxVariationValue = -100
